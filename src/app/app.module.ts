@@ -2,17 +2,44 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { CompanyWizardComponent } from './company-wizard/company-wizard.component';
+import { CompanyHomeComponent } from './company-home/company-home.component';
+import { WizardStep1Component } from './wizard-step1/wizard-step1.component';
+import { WizardStep2Component } from './wizard-step2/wizard-step2.component';
+
+const ROUTES = [
+  {
+    component: CompanyWizardComponent,
+    path: 'company/new-post'
+  }, {
+    component: CompanyHomeComponent,
+    path: 'company'
+  },
+  {
+    path: '**',
+    redirectTo: 'company'
+  }
+];
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CompanyWizardComponent,
+    CompanyHomeComponent,
+    WizardStep1Component,
+    WizardStep2Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgbModule.forRoot(),
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [],
   bootstrap: [AppComponent]
