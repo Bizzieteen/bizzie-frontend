@@ -1,0 +1,61 @@
+<div class="container">
+
+    <form #wizard="ngForm">
+        <div class="row">
+            <div class="col-sm-6">
+
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input required type="text" class="form-control" id="companyName" aria-describedby="companyName" placeholder="BizzieTeen" name="companyName" [(ngModel)]="form.company">
+                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                </div>
+            </div>
+            <div class="col-sm-6">
+
+                <div class="form-group">
+                    <label for="companyContactName">Company Contact Name</label>
+                    <input required type="text" class="form-control" name="contact_name" [(ngModel)]="form.contact_name" id="companyContactName" aria-describedby="companyContactName" placeholder="Monique Nunally">
+                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="companyContactPhone">Contact Email</label>
+                    <input required type="email" class="form-control" id="companyContactPhone" name="contact_email" [(ngModel)]="form.contact_email" aria-describedby="companyContactEmail" placeholder="monique@bizzieteen.com">
+                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                </div>
+            </div>
+            <div class="col-sm-6">
+
+                <div class="form-group">
+                    <label for="companyContactPhone">Contact Phone</label>
+                    <input required type="tel" class="form-control" id="companyContactPhone" name="contact_phone" [(ngModel)]="form.contact_phone" aria-describedby="companyContactPhone" placeholder="404-295-4724">
+                    <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="companyWebsite">Company Website</label>
+                    <input type="text" class="form-control" id="companyWebsite" aria-describedby="websiteHelp" placeholder="https://www.bizzieteen.com/" name="website" [(ngModel)]="form.website">
+                    <!--<small id="websiteHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="exampleInputFile">Company Logo</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="logo" [(ngModel)]="form.logo" (change)="saveFileData($event)">
+                    <small id="fileHelp" class="form-text text-muted">Please upload an image of your logo in PNG or JPG format.</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <button [disabled]="!wizard.form.valid" type="submit" class="btn btn-primary float-right">Next</button>
+            </div>
+        </div>
+    </form>
+</div>

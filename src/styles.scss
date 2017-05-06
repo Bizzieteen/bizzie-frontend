@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~simplemde/dist/simplemde.min.css';
+.text-light {
+    font-weight: 300;
+}
+
+hr.transparent {
+    border: none !important;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+.btn .fa {
+    margin-right: 8px;
+}

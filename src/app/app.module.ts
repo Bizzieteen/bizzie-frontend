@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 
+import { MarkdownModule } from 'angular2-markdown';
+import { SimplemdeModule, SIMPLEMDE_CONFIG } from 'ng2-simplemde/no-style'
+
 import { AppComponent } from './app.component';
 import { CompanyWizardComponent } from './company-wizard/company-wizard.component';
 import { CompanyHomeComponent } from './company-home/company-home.component';
@@ -39,7 +42,20 @@ const ROUTES = [
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    SimplemdeModule.forRoot({
+      provide: SIMPLEMDE_CONFIG,
+      useValue: {
+        renderingConfig: {
+          codeSyntaxHighlighting: true
+        },
+        autosave: {
+          enabled: true,
+          uniqueId: 312
+        }
+      }
+    }),
+    MarkdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class=" col-sm-9 ">
+            <h3><span class="text-light ">Welcome, </span>Creekside High School!</h3>
+        </div>
+        <div class="col-sm-3 ">
+            <a class="btn btn-primary float-right " routerLink="/company/new-post"><i class="fa fa-plus"></i>Create New Post</a>
+        </div>
+    </div>
+    <hr style="margin-bottom:60px;">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Picked up?</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let job of jobs">
+                        <td>{{job.name}}</td>
+                        <td>{{job.pickedup}}</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary">More...</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

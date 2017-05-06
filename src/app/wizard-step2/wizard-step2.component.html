@@ -1,0 +1,43 @@
+<div class="container">
+
+    <form #wizard="ngForm">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="exampleTextarea">Title</label>
+                    <input type="text" class="form-control" name="title" [(ngModel)]="model.title" placeholder="Blog post on cars' contributions to pollution">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="taskType">Writing Task Type</label>
+                    <select name="type" [(ngModel)]="model.type" class="form-control" id="taskType">
+                        <option>Blog</option>
+                        <option>Proposal</option>
+                        <option>Analysis</option>
+                        <option>Web Copy</option>
+                        <option>Social Media Campaign </option>
+                        <option>Product Review</option>
+                        <option>Op-ed</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="exampleTextarea">Task Description</label>
+                    <simplemde id="exampleTextarea" name="description" [(ngModel)]="model.description"></simplemde>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary float-right">Next</button>
+            </div>
+        </div>
+    </form>
+</div>
