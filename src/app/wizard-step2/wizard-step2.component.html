@@ -28,15 +28,27 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <div class="form-group">
-                    <label for="exampleTextarea">Task Description</label>
-                    <simplemde id="exampleTextarea" name="description" [(ngModel)]="model.description"></simplemde>
-                </div>
+                <ngb-tabset>
+                    <ngb-tab title="Edit">
+                        <ng-template ngbTabContent>
+                            <div class="m-t-10"></div>
+                            <simplemde id="exampleTextarea" name="description" [(ngModel)]="model.description"></simplemde>
+                        </ng-template>
+                    </ngb-tab>
+                    <ngb-tab title=" Preview ">
+                        <ng-template ngbTabContent>
+                            <div class="m-t-10"></div>
+                            <markdown style="min-height:400px;">
+                                {{model.description}}
+                            </markdown>
+                        </ng-template>
+                    </ngb-tab>
+                </ngb-tabset>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary float-right">Next</button>
+        <div class="row ">
+            <div class="col-sm-12 ">
+                <button type="submit " class="btn btn-primary float-right">Next</button>
             </div>
         </div>
     </form>
