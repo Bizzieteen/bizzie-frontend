@@ -7,14 +7,13 @@ import { WizardStepOne } from '../../types/wizard-one.class';
   styleUrls: ['./company-wizard.component.css']
 })
 export class CompanyWizardComponent implements OnInit {
-
+  step: number = 1;
   progress: number = 0;
-  form: Form;
+  form: Form = new Form();
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   get progressWidth(): string {
     return this.progress + '%';
@@ -23,6 +22,7 @@ export class CompanyWizardComponent implements OnInit {
   setCompanyInfo(e) {
     this.form.company = e;
     this.progress = 25;
+    this.step = 2;
   }
 }
 

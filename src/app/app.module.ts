@@ -13,6 +13,8 @@ import { CompanyWizardComponent } from './company-wizard/company-wizard.componen
 import { CompanyHomeComponent } from './company-home/company-home.component';
 import { WizardStep1Component } from './wizard-step1/wizard-step1.component';
 import { WizardStep2Component } from './wizard-step2/wizard-step2.component';
+import { SchoolHomeComponent } from './school-home/school-home.component';
+import { ViewJobComponent } from './view-job/view-job.component';
 
 const ROUTES = [
   {
@@ -21,6 +23,14 @@ const ROUTES = [
   }, {
     component: CompanyHomeComponent,
     path: 'company'
+  },
+  {
+    component: SchoolHomeComponent,
+    path: 'school'
+  },
+  {
+    component: ViewJobComponent,
+    path: 'view-job/:id'
   },
   {
     path: '**',
@@ -35,7 +45,9 @@ const ROUTES = [
     CompanyWizardComponent,
     CompanyHomeComponent,
     WizardStep1Component,
-    WizardStep2Component
+    WizardStep2Component,
+    SchoolHomeComponent,
+    ViewJobComponent
   ],
   imports: [
     BrowserModule,

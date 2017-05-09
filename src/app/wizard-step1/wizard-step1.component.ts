@@ -13,7 +13,7 @@ export class WizardStep1Component implements OnInit {
 
   @ViewChild('wizard') wizard: NgForm;
 
-  @Output('onSubmit') onSubmit: EventEmitter<WizardStepOne> = new EventEmitter();
+  @Output('onSubmit') onSubmit: EventEmitter<WizardStepOne> = new EventEmitter(true);
 
   constructor() { }
 
@@ -24,6 +24,10 @@ export class WizardStep1Component implements OnInit {
     // Upload file
     this.form.logo = e.srcElement.files[0];
     console.log(e.srcElement.files);
+  }
+
+  emitData(data: WizardStepOne) {
+    this.onSubmit.emit(data);
   }
 
 }

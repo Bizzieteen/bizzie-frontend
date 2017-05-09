@@ -5,7 +5,7 @@
             <div class="col-sm-12">
                 <div class="form-group">
                     <label for="exampleTextarea">Title</label>
-                    <input type="text" class="form-control" name="title" [(ngModel)]="model.title" placeholder="Blog post on cars' contributions to pollution">
+                    <input type="text" class="form-control" name="title" required [(ngModel)]="model.title" placeholder="Blog post on cars' contributions to pollution">
                 </div>
             </div>
         </div>
@@ -13,7 +13,7 @@
             <div class="col-sm-12">
                 <div class="form-group">
                     <label for="taskType">Writing Task Type</label>
-                    <select name="type" [(ngModel)]="model.type" class="form-control" id="taskType">
+                    <select name="type" required [(ngModel)]="model.type" class="form-control" id="taskType">
                         <option>Blog</option>
                         <option>Proposal</option>
                         <option>Analysis</option>

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class=" col-sm-9 ">
+            <h3><span class="text-light ">Title: </span>{{item.task.title}}</h3>
+        </div>
+        <div class="col-sm-3 ">
+            <a class="btn btn-primary float-right" (click)="true"><i class="fa fa-check"></i>Pickup</a>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-4">
+            Company Name: <b>{{item.company.name}}</b>
+            <br> Company Contact Name: <b>{{item.company.contact_name}}</b>
+        </div>
+        <div class="col-sm-4">
+            Contact Email: <b>{{item.company.contact_email}}</b>
+            <br> Contact Phone: <b>{{item.company.contact_phone}}</b>
+        </div>
+        <div class="col-sm-4">
+            Company Website: <b>{{item.company.website}}</b>
+            <br>Task Type: <b>
+            {{item.task.type}}</b>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card mt-5 p-4">
+                <div class="card-block">
+                    <markdown style="min-height:400px;">
+                        {{item.task.description}}
+                    </markdown>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,5 +10,5 @@
 
 
 
-<!--<app-wizard-step1 (onSubmit)="setCompanyInfo($event)"></app-wizard-step1>-->
-<app-wizard-step2></app-wizard-step2>
+<app-wizard-step1 *ngIf="step == 1" (onSubmit)="setCompanyInfo($event)"></app-wizard-step1>
+<app-wizard-step2 *ngIf="step == 2"></app-wizard-step2>
